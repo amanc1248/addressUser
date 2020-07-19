@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Address Book</title>
+
+  <!-- THE CSS STYLESHEET -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- THE BOOTSTRAP CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- THE BOOTSTRAP JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+  <!-- THE WHOLE SECTION including, 1)Navigation-Bar-Division 2)Address-Division -->
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 1) theNavbar Division (For creating navbar) -->
+        <div class="col-lg-2  theNavbar bg-dark">
+          <nav class="navbar navbar-dark bg-dark ">
+            <ul class="navbar-nav">
+              <div class="row">
+
+
+                <!-- list for manage my account tab -->
+
+                <div class="col-lg-12 col-md-4 col-4">
+                  <li class="nav-item active ">
+                    <a class="nav-link maintab dropdown-toggle myMenu" href="#manageMyAccountMenu" data-toggle="collapse">Manage Account</a>
+                    <ul class="collapse" id="manageMyAccountMenu">
+                      <li class="nav-item active"><a href="#" class="nav-link subtab">My Profile</a></li>
+                      <li class="nav-item active"><a href="#" class="nav-link subtab">Address Book</a></li>
+                      <li class="nav-item active"><a class="nav-link subtab" href="#">Payment Options</a></li>
+                    </ul>
+                  </li>
+                </div>
+
+
+                <!-- for My orders tab -->
+                <div class="col-lg-12 col-md-4 col-4">
+                  <li class="nav-item active ">
+                    <a class=" nav-link dropdown-toggle myMenu" href="#myOrdersMenu" data-toggle="collapse">My Orders</a>
+                    <ul class="collapse" id="myOrdersMenu">
+                      <li class="nav-item active"><a class="nav-link subtab" href="#">Returns</a></li>
+                      <li class="nav-item active"><a class="nav-link subtab" href="#">Cancellations</a></li>
+                    </ul>
+                  </li>
+                </div>
+
+                <!-- for review -->
+                <div class="col-lg-12 col-md-4 col-4">
+                  <li class="nav-item active"><a class="nav-link subtab" href="#">My Reviews</a></li>
+                </div>
+
+              </div>
+            </ul>
+          </nav>
+        </div>
+
+
+        <!-- 2) THE ADDRESS-DIVISION  -->
+        <div class="col-lg-10 addressBlocks">
+
+          <!-- 2.1)FOR CONTAINING THE ADDRESS OF USER -->
+          <div class="addressContainer col-12">
+            <!-- 2.1.1) Address-Table div -->
+            <div class="row">
+
+              <!-- FOR NAME -->
+              <div class="col-lg-3 col-md-3 addressContainedDiv">
+                <div>
+                  <label class="labelColumn addressUserLabel" for="FullName">Full Name</label>
+                </div>
+                <div>
+                  <input class="inputColumn" type="text" name="FullName" value="Dipu Chaudhary" disabled>
+                </div>
+              </div>
+
+              <!-- FOR ADDRESS -->
+              <div class="col-lg-3 col-md-3 addressContainedDiv">
+                <div>
+                  <label class="labelColumn addressUserLabel" for="Address">Address</label>
+                </div>
+                <div>
+                  <input class="inputColumn" type="text" name="Address" value="Janpat Tol, Itahari" disabled>
+                </div>
+              </div>
+
+              <!-- FOR REGION -->
+              <div class="col-lg-3 col-md-3 addressContainedDiv">
+                <div>
+                  <label class="labelColumn addressUserLabel" for="Region">Region</label>
+                </div>
+                <div>
+                  <input class="inputColumn" type="text" name="Region" value="Koshi" disabled>
+                </div>
+              </div>
+
+              <!-- FOR PHONE NUMBER -->
+              <div class="col-lg-3 col-md-3 addressContainedDiv">
+                <div>
+                  <label class="labelColumn addressUserLabel" for="PhoneNumber">Phone Number</label>
+                </div>
+                <div>
+                  <input class="inputColumn  " type="tel" name="PhoneNumber" value="9804355969" disabled>
+                </div>
+              </div>
+
+              <!-- FOR EDITING -->
+              <div class="col-lg-3 col-md-3 addressContainedDiv">
+                <div>
+                  <label class="labelColumn addressUserLabel" for="Edit"></label>
+                </div>
+                <div>
+                  <a class="inputColumn " href="#">EDIT</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2.1.2) add-Address-Button Div -->
+            <div class="add-Address-Button col-12 text-right">
+              <button class="addressButton btn btn-info" type="button" name="button" onclick="addAddressFunction()"> +ADD NEW ADDRESS </button>
+            </div>
+          </div>
+
+
+          <!-- 2.2) FOR CONTAINING THE NEW ADDRESS FORM-->
+          <div id="addressID" class="add-New-Address-Form col-12">
+            <h2>Add New Address</h2>
+            <form class="addNewAddress row" action="index.html" method="post">
+
+              <!-- 2.2.1)) FIRST DIVISION, 1)FullName 2)PhoneNumber -->
+              <div class="both-Parts-Properties col-lg-6 col-md-6 col-12" id="first-Part">
+                <!-- Add Full Name -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="labelColumn">
+                      <label for="FName">Full Name</label>
+                    </div>
+                    <div>
+                      <input class="inputColumnForAddAddress" type="text" name="FName" class="name" placeholder="Full Name">
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <!-- Add Phone Number -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="labelColumn">
+                      <label for="phoneNumber">Phone Number</label>
+                    </div>
+                    <div>
+                      <input class="inputColumnForAddAddress" type="text" name="phoneNumber" class="name" placeholder="Phone Number">
+                    </div>
+                  </div>
+                </div>
+                <br>
+              </div>
+              <!--2.2.2)) SECOND DIVISION, 3)Choose-Region 4)Choose-City 5)Choose-Area 6)Add-Address -->
+              <div class="both-Parts-Properties col-lg-6 col-md-6 col-12" id="second-Part">
+                <!-- Choose Region   -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="labelColumn">
+                      <label for="choosingRegion">Region</label>
+                    </div>
+                    <div>
+                      <select name="choosingRegion" class="inputColumnForAddAddress" required>
+                        <option value="Bagmati">Bagmati</option>
+                        <option value="Bheri">Bheri</option>
+                        <option value="Gandaki">Gandaki</option>
+                        <option value="Janakpur">Janakpur</option>
+                        <option value="Koshi">Koshi</option>
+                        <option value="Lumbini">Lumbini</option>
+                        <option value="Mechi">Mechi</option>
+                        <option value="Narayani">Narayani</option>
+                        <option value="Rapti">Rapti</option>
+                        <option value="Seti">Seti</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Choose city -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="labelColumn">
+                      <label for="choosingCity">City</label>
+                    </div>
+                    <div>
+                      <select name="choosingCity" class="inputColumnForAddAddress" required>
+                        <option value="Itahari">Itahari</option>
+                        <option value="Biratnagar">Biratnagar</option>
+                        <option value="Duhabi">Duhabi</option>
+                        <option value="Kathamandu">Kathamandu</option>
+                        <option value="Koshi">Koshi</option>
+                        <option value="Inaruwa">Inaruwa</option>
+                        <option value="Dharan">Dharan</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Choose Area   -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="labelColumn">
+                      <label for="choosingArea">Area</label>
+                    </div>
+                    <div>
+                      <select name="choosingArea" class="inputColumnForAddAddress" required>
+                        <option value="Bagmati">Bagmati</option>
+                        <option value="Bheri">Bheri</option>
+                        <option value="Gandaki">Gandaki</option>
+                        <option value="Janakpur">Janakpur</option>
+                        <option value="Koshi">Koshi</option>
+                        <option value="Lumbini">Lumbini</option>
+                        <option value="Mechi">Mechi</option>
+                        <option value="Narayani">Narayani</option>
+                        <option value="Rapti">Rapti</option>
+                        <option value="Seti">Seti</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Add Address -->
+                <div class="row">
+                  <div class="col-12">
+                    <div class="labelColumn">
+                      <label for="addingAddress">Address</label>
+                    </div>
+                    <div>
+                      <input class="inputColumnForAddAddress" type="text" name="addingAddress" placeholder="For Example: House# 123, Street# 123, ABC Road">
+                    </div>
+                  </div>
+                </div>
+                <br>
+              </div>
+            </form>
+            <!-- 2.2.3)) CANCEL OR SAVE BUTTON -->
+
+
+            <div class="row">
+                    <div class="col-lg-10 col-md-10 col-6  text-right">
+                        <button type="button" class="btn btn-sm btn-danger cancelButton" name="button" >CANCEL</button>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-6 ">
+                          <button type="button" class="btn btn-sm btn-primary saveButton" name="button">SAVE</button>
+                    </div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="addressUI.js" charset="utf-8"></script>
+</body>
+
+</html>

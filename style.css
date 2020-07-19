@@ -1,0 +1,98 @@
+/* THE WHOLE SECTION, 1)Navigation-Bar-Division 2)Address-Division */
+.container-fluid{
+  background-color: #EFF0F4;
+  height: 625px;
+  padding: 2%;
+  margin: 15% 0 15% 0;
+}
+/* 1st) Navigation-Bar-Division */
+.theNavbar{
+  background-color: #EFF0F4;
+  font-size: 13px;
+  height: 575px;
+}
+.navbar, .navbar-nav{
+  width:100%;
+}
+ul{
+  list-style-type: none;
+  padding-left: 8px;
+}
+.subtab{
+  width: 100px;
+}
+/* 2nd) Address-Division */
+
+ /* 2nd) A-D
+  2.1 Address-Container-Div & add-New-Address-Form DIV (For containing the Address Table and new address form)  */
+.addressContainer, .add-New-Address-Form{
+  border: 1px solid rgb(224, 227, 232);
+  box-shadow: 1px 1px 2px 2px rgb(240, 218, 229);
+  background-color: white;
+  padding: 3%;
+}
+
+/* 2.1.1 Address-Table div (For styling the address table) */
+/* For styliing the label for storing the address */
+.labelColumn{
+ color:dimgray;
+  font-size: 15px;
+  font-weight:500;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2px;
+  width: 100%;
+}
+
+
+  /* for styling inputs, select elements and textarea */
+.inputColumn{
+  border: none;
+  font-size: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+
+
+/* 2.1.2 add-Address-Button div (For styling the buttons) */
+.add-Address-Button{
+  margin-top: 3%;
+  text-align: right;
+}
+
+
+/* 2nd) A-D
+ 2.2) add-New-Address-Form DIV (For containing the add Address form)  */
+     /* this part was styled above  👆 */
+
+/* 2.2.1)) FIRST DIVISION, 1)FullName 2)PhoneNumber
+ &
+2.2.2)) SECOND DIVISION, 3)Choose-Region 4)Choose-City 5)Choose-Area 6)Add-Address */
+.inputColumnForAddAddress{
+  border: 3px solid rgb(248, 246, 246);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: dimgray;
+  height: 45px;
+  padding: 6px;
+  width:100%;
+}
+
+/* 2.2.3)) CANCEL OR SAVE BUTTON */
+/* CANCEL BUTTON STYLING */
+.cancelButton{
+  width: 16%;
+}
+/* SAVE BUTTON STYLING */
+.saveButton{
+  width: 100%;
+}
+/* ADDING MEDIA QUERY FOR RESPONSIVENESS */
+ @media screen and (max-width:1000px)  {
+   .theNavbar{
+    height: auto;
+  }
+.cancelButton, .saveButton{
+  width: 100%;
+}
+}
